@@ -10,8 +10,9 @@ import androidx.annotation.Nullable;
 import com.example.projectfinal.viewmodel.CommonVM;
 import com.example.samplemvvm.databinding.M001LoginBinding;
 
-public class M001LoginFrag extends BaseFragment<M001LoginBinding, CommonVM>{
+public class M001LoginFrag extends BaseFragment<M001LoginBinding, CommonVM> {
     public static final String TAG = M001LoginFrag.class.getName();
+
     @Override
     protected void initView() {
         binding.btSignUp.setOnClickListener(new View.OnClickListener() {
@@ -27,7 +28,7 @@ public class M001LoginFrag extends BaseFragment<M001LoginBinding, CommonVM>{
     }
 
     private void gotoRegisterScreen() {
-                callBack.showFragment(M002RegisterFrag.TAG,null,true);
+        callBack.showFragment(M002RegisterFrag.TAG, null, true);
     }
 
     @Override

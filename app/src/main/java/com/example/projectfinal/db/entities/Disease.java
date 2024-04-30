@@ -3,7 +3,6 @@ package com.example.projectfinal.db.entities;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Insert;
 
 @Entity(primaryKeys = {"DiseaseId"})
 public class Disease {

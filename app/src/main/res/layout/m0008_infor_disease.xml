@@ -5,24 +5,27 @@
     android:layout_height="match_parent"
     android:background="@mipmap/bg_disease"
     android:orientation="vertical">
+
     <TableRow
-        android:gravity="end"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="70dp"
+        android:gravity="end">
+
         <Button
             android:id="@+id/bt_add"
             android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_margin="10dp"
             android:background="@mipmap/ic_them"
-            android:backgroundTint="@color/white"
-            android:layout_height="50dp"/>
+            android:backgroundTint="@color/white" />
+
         <Button
             android:id="@+id/bt_search"
             android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_margin="10dp"
             android:background="@mipmap/ic_search"
-            android:backgroundTint="@color/white"
-            android:layout_height="50dp"/>
+            android:backgroundTint="@color/white" />
 
     </TableRow>
 

@@ -11,8 +11,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class M003HospitalVM extends BaseViewModel {
-    private ArrayList<Hospital> listHospital;
     private static final String TAG = M003HospitalVM.class.getName();
+    private ArrayList<Hospital> listHospital;
 
     public void listHospital(InputStream in) throws Exception {
         try (InputStreamReader isr = new InputStreamReader(in, StandardCharsets.UTF_8);
@@ -35,10 +35,10 @@ public class M003HospitalVM extends BaseViewModel {
                     location = str;
                     lat = Double.parseDouble(location.split(",")[0]);
                     lgn = Double.parseDouble(location.split(",")[1]);
-                }else if (!str.startsWith("0-0-0-0-0-0")) {
+                } else if (!str.startsWith("0-0-0-0-0-0")) {
                     desc.append(str).append("\n");
                 } else {
-                    listHospital.add(new Hospital(name,  linkPhoto,desc.toString(),lat,lgn));
+                    listHospital.add(new Hospital(name, linkPhoto, desc.toString(), lat, lgn));
                     name = null;
                     linkPhoto = null;
                     desc = new StringBuilder();

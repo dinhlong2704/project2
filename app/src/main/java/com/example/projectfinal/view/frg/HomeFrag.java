@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import com.example.projectfinal.viewmodel.CommonVM;
 import com.example.samplemvvm.databinding.HomeFragmentBinding;
 
-public class HomeFrag extends  BaseFragment<HomeFragmentBinding, CommonVM>{
+public class HomeFrag extends BaseFragment<HomeFragmentBinding, CommonVM> {
     @Override
     protected void initView() {
         callBack.checkMapPermission();

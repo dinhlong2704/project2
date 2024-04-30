@@ -20,14 +20,15 @@ public class M004MapHospitalFrag extends BaseFragment<M004HospitalMapBinding, Co
 
     @Override
     protected void initView() {
-            gotoMapHospital();
+        gotoMapHospital();
     }
+
     private void gotoMapHospital() {
         SupportMapFragment fragment = new SupportMapFragment();
         FragmentTransaction trans = getChildFragmentManager().beginTransaction();
         trans.replace(R.id.ln_frg_map, fragment, "SupportMapFragment").commit();
         fragment.getMapAsync(googleMap -> {
-            MapManager.getInstance().initMap(context,googleMap);
+            MapManager.getInstance().initMap(context, googleMap);
         });
     }
 
@@ -40,6 +41,7 @@ public class M004MapHospitalFrag extends BaseFragment<M004HospitalMapBinding, Co
     protected M004HospitalMapBinding initViewBinding(@NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
         return M004HospitalMapBinding.inflate(getLayoutInflater());
     }
+
     public void showFragment(String tag, Object data, boolean isBack) {
         try {
             Class<?> clazz = Class.forName(tag); //Trò vào 1 fragment class

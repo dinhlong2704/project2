@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
+
 @Dao
 public interface AccountDAO {
     @Query("Select * From Account")
@@ -13,6 +14,7 @@ public interface AccountDAO {
 
     @Insert
     void insertAccount(Account account);
+
     @Delete
     void deleteAccount(Account account);
 }

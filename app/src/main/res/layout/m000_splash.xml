@@ -17,8 +17,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/bt_getstart"
-            android:importantForAccessibility="no" />
+            android:importantForAccessibility="no"
+            android:src="@mipmap/bt_getstart" />
+
         <Button
             android:id="@+id/bt_start"
             android:layout_width="wrap_content"
@@ -27,7 +28,6 @@
             android:backgroundTint="#05090C"
             android:drawableLeft="@mipmap/txt_getstarted"
             tools:ignore="RtlHardcoded" />
-
 
 
     </FrameLayout>

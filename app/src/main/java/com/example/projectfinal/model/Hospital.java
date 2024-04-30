@@ -8,7 +8,7 @@ public class Hospital {
     public final double lat;
     public final double lgn;
 
-    public Hospital(String name,  String linkPhoto,String desc,double lat,double lgn) {
+    public Hospital(String name, String linkPhoto, String desc, double lat, double lgn) {
         this.name = name;
         this.desc = desc;
         this.linkPhoto = linkPhoto;

@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
-
 import com.example.projectfinal.view.OnMainCallBack;
 import com.example.projectfinal.view.frg.BaseFragment;
 import com.example.samplemvvm.R;
@@ -22,6 +21,7 @@ public abstract class BaseAct<T extends ViewBinding, M extends ViewModel>
         extends AppCompatActivity implements View.OnClickListener, OnMainCallBack {
     protected T binding;
     protected M viewModel;
+
     @Override
     protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +32,9 @@ public abstract class BaseAct<T extends ViewBinding, M extends ViewModel>
     }
 
     protected abstract void initView();
+
     protected abstract T initViewBinding();
+
     protected abstract Class<M> initViewModel();
 
 
@@ -41,9 +43,11 @@ public abstract class BaseAct<T extends ViewBinding, M extends ViewModel>
         v.startAnimation(AnimationUtils.loadAnimation(this, androidx.appcompat.R.anim.abc_fade_in));
         clickView(v);
     }
+
     protected void clickView(View v) {
         //
     }
+
     @Override
     public void showFragment(String tag, Object data, boolean isBack) {
         try {

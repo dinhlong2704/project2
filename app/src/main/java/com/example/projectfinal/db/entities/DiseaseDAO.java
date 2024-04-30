@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
+
 @Dao
 public interface DiseaseDAO {
     @Query("Select * From Disease")
@@ -13,6 +14,7 @@ public interface DiseaseDAO {
 
     @Insert
     void insertDisease(Disease disease);
+
     @Delete
     void deleteDisease(Disease disease);
 }

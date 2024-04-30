@@ -16,26 +16,27 @@
             android:layout_marginBottom="30dp"
             android:gravity="center_vertical"
             tools:ignore="UselessParent">
+
             <ImageView
                 android:id="@+id/im_info"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@mipmap/ic_info"
                 tools:ignore="ContentDescription" />
+
             <TextView
-                android:layout_width="wrap_content"
                 android:id="@+id/tv_name"
-                android:text="@string/txt_name"
-                android:textSize="22sp"
-                android:textColor="@color/gray"
-                />
-            <TextView
                 android:layout_width="wrap_content"
-                android:id="@+id/tv_age"
-                android:text=" :22"
-                android:textSize="22sp"
+                android:text="@string/txt_name"
                 android:textColor="@color/gray"
-                />
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:text=" :22"
+                android:textColor="@color/gray"
+                android:textSize="22sp" />
         </TableRow>
 
         <TableRow

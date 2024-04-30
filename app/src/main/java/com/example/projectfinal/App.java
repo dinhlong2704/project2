@@ -11,6 +11,10 @@ public class App extends Application {
     private Storage storage;
     private DatabaseApp db;
 
+    public static App getInstance() {
+        return Instance;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -18,6 +22,7 @@ public class App extends Application {
         storage = new Storage();
         initDB();
     }
+
     private void initDB() {
         db = Room.databaseBuilder(getApplicationContext(), DatabaseApp.class, "dataApp").createFromAsset("db/data.db").build();
     }
@@ -26,9 +31,6 @@ public class App extends Application {
         return db;
     }
 
-    public static App getInstance() {
-        return Instance;
-    }
     public Storage getStorage() {
         return storage;
     }

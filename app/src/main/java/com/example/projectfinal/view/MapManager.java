@@ -16,9 +16,16 @@ public class MapManager {
 
     }
 
+    public static MapManager getInstance() {
+        if (instance == null) {
+            instance = new MapManager();
+        }
+        return instance;
+    }
+
     public void initMap(Context context, GoogleMap googleMap) {
         this.map = googleMap;
-        if (ActivityCompat.checkSelfPermission(context,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             return;
@@ -26,11 +33,5 @@ public class MapManager {
         map.setMyLocationEnabled(true);
         map.getUiSettings().setZoomControlsEnabled(true);
         map.getUiSettings().setAllGesturesEnabled(true);
-}
-    public static MapManager getInstance() {
-        if(instance == null){
-            instance = new MapManager();
-        }
-        return instance;
     }
 }

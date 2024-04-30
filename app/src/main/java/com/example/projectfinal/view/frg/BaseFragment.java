@@ -10,25 +10,20 @@ import android.view.animation.AnimationUtils;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
-import com.example.projectfinal.view.OnMainCallBack;
-import com.example.samplemvvm.R;
 
-import java.lang.reflect.Constructor;
+import com.example.projectfinal.view.OnMainCallBack;
 
 
 public abstract class BaseFragment<B extends ViewBinding, V extends ViewModel>
         extends Fragment implements View.OnClickListener {
+    public Object data;
     protected Context context;
     protected B binding;
     protected V viewModel;
     protected OnMainCallBack callBack;
-    public Object data;
-
 
     @Override
     public final void onAttach(@NonNull Context context) {
