@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_chat"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/ic_chat" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@mipmap/bg_chat_detail"
+            android:padding="10dp"
+            android:text="@string/txt_medica"
+            android:textSize="20sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="end"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/tv_answer"
+            android:layout_width="270dp"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_chat_detail"
+            android:padding="10dp"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/ic_user" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_margin="20dp">
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/ic_chat" />
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="270dp"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_chat_detail"
+            android:padding="10dp"
+            android:textSize="20sp" />
+
+
+
+    </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+         android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/im_micro"
+            android:layout_width="50dp"
+            android:src="@mipmap/ic_micro"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="40dp"
+            android:layout_height="70dp"
+            />
+
+
+</LinearLayout>

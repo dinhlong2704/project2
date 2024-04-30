@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lnlogin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_login"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:importantForAccessibility="no"
+        android:src="@mipmap/ic_avartar" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:paddingTop="10dp"
+        android:src="@mipmap/txt_welcomeonboard" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="312dp"
+        android:layout_height="47dp"
+        android:layout_margin="5dp"
+        android:background="@mipmap/bg_text"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/txt_name_acc"
+        android:textSize="18sp"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/txtemail"
+        android:layout_width="312dp"
+        android:layout_height="47dp"
+        android:layout_margin="5dp"
+        android:background="@mipmap/bg_text"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/txt_email"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtpass"
+        android:layout_width="312dp"
+        android:layout_height="47dp"
+        android:layout_margin="5dp"
+        android:background="@mipmap/bg_text"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/txt_pass"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtconfirmpass"
+        android:layout_width="312dp"
+        android:layout_height="47dp"
+        android:layout_margin="5dp"
+        android:background="@mipmap/bg_text"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/txtconfirmpass"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/trongsuot"
+        android:drawableLeft="@mipmap/bt_register"
+        tools:ignore="RtlHardcoded" />
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:ignore="UselessLeaf">
+
+        <TextView
+            android:text="@string/txt_haveAcount"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/bt_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_sign_in"
+            android:textColor="@color/green"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:ignore="SmallSp" />
+
+    </TableRow>
+
+
+</LinearLayout>
