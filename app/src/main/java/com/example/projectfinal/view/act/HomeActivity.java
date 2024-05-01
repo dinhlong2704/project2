@@ -12,7 +12,7 @@ import com.example.projectfinal.App;
 import com.example.projectfinal.db.entities.Disease;
 import com.example.projectfinal.view.frg.M000SplashFrag;
 import com.example.projectfinal.viewmodel.CommonVM;
-import com.example.samplemvvm.databinding.ActivityHomeBinding;
+import com.example.projectfinal.databinding.ActivityHomeBinding;
 
 import java.util.List;
 
@@ -24,7 +24,6 @@ public class HomeActivity extends BaseAct<ActivityHomeBinding, CommonVM> {
     public void backToPrevious() {
         onBackPressed();
     }
-
     @Override
     public void checkMapPermission() {
         if (checkSelfPermission(Manifest.permission.ACCESS_BACKGROUND_LOCATION) != PackageManager.PERMISSION_GRANTED) {

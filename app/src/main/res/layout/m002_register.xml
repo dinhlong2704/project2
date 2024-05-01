@@ -23,53 +23,84 @@
         android:paddingTop="10dp"
         android:src="@mipmap/txt_welcomeonboard" />
 
-    <TextView
+    <EditText
         android:id="@+id/txt_name"
         android:layout_width="312dp"
         android:layout_height="47dp"
         android:layout_margin="5dp"
+        android:autofillHints="name"
         android:background="@mipmap/bg_text"
+        android:hint="@string/txt_name_acc"
+        android:inputType="text"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
-        android:text="@string/txt_name_acc"
+        android:textColor="#49454F"
         android:textSize="18sp"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry,TextViewEdits" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtemail"
         android:layout_width="312dp"
         android:layout_height="47dp"
         android:layout_margin="5dp"
+        android:autofillHints="username"
         android:background="@mipmap/bg_text"
+        android:hint="@string/txt_email"
+        android:inputType="text"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
-        android:text="@string/txt_email"
-        android:textSize="18sp" />
+        android:textColor="#49454F"
+        android:textSize="18sp"
+        tools:ignore="RtlSymmetry,TextFields,TextViewEdits" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtpass"
         android:layout_width="312dp"
         android:layout_height="47dp"
         android:layout_margin="5dp"
+        android:autofillHints="password"
         android:background="@mipmap/bg_text"
+        android:hint="@string/txt_pass"
+        android:inputType="textPassword"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
-        android:text="@string/txt_pass"
-        android:textSize="18sp" />
+        android:text=""
+        android:textColor="#49454F"
+        android:textSize="18sp"
+        tools:ignore="RtlSymmetry,TextViewEdits" />
 
-    <TextView
+
+    <EditText
         android:id="@+id/txtconfirmpass"
         android:layout_width="312dp"
         android:layout_height="47dp"
         android:layout_margin="5dp"
+        android:autofillHints="password"
         android:background="@mipmap/bg_text"
+        android:hint="@string/txtconfirmpass"
+        android:inputType="textPassword"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
-        android:text="@string/txtconfirmpass"
-        android:textSize="18sp" />
+        android:textColor="#49454F"
+        android:textSize="18sp"
+        tools:ignore="RtlSymmetry,TextViewEdits" />
+
+    <EditText
+        android:id="@+id/txt_dob"
+        android:layout_width="312dp"
+        android:layout_height="47dp"
+        android:layout_margin="5dp"
+        android:background="@mipmap/bg_text"
+        android:hint="@string/txt_date_of_birth"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        android:paddingStart="10dp"
+        android:textColor="#49454F"
+        android:textSize="18sp"
+        tools:ignore="LabelFor,RtlSymmetry,TextViewEdits" />
 
     <Button
-        android:id="@+id/bt_login"
+        android:id="@+id/bt_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/trongsuot"

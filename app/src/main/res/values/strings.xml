@@ -5,7 +5,7 @@
     <string name="login">Login</string>
     <string name="txt_name_acc">Enter your full name</string>
     <string name="txt_email">Email or phone number</string>
-    <string name="txt_pass">Password</string>
+    <string name="txt_pass">Password.......</string>
     <string name="txtconfirmpass">Confirm password</string>
     <string name="txt_haveAcount">Alreadly have an account ?</string>
     <string name="txt_DontAcount">Don’t have an account ?</string>
@@ -17,7 +17,9 @@
     <string name="txt_alarm">Chào bạn,bạn muốn đặt báo thức lúc nào ? </string>
     <string name="txt_music">Chào bạn,bạn muốn nghe gì ? </string>
     <string name="txt_medica">Chào bạn, bạn cần thông tin về loại bệnh gì ? </string>
-    <string name="txt_question">1 km bằng nhiêu m</string>
+    <string name="txt_request">1 km bằng nhiêu m ? </string>
     <string name="txt_call">bạn muốn gọi điện cho ai vậy ?\n</string>
     <string name="txt_disease">THÔNG TIN THUỐC</string>
+    <string name="txt_feedback">1k = 1000m\n</string>
+    <string name="txt_date_of_birth">Date Of Birth</string>
 </resources>

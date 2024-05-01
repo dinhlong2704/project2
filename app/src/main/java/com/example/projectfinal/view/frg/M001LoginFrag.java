@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.projectfinal.viewmodel.CommonVM;
-import com.example.samplemvvm.databinding.M001LoginBinding;
+import com.example.projectfinal.databinding.M001LoginBinding;
 
 public class M001LoginFrag extends BaseFragment<M001LoginBinding, CommonVM> {
     public static final String TAG = M001LoginFrag.class.getName();

@@ -24,9 +24,9 @@ public class App extends Application {
     }
 
     private void initDB() {
-        db = Room.databaseBuilder(getApplicationContext(), DatabaseApp.class, "dataApp").createFromAsset("db/data.db").build();
+      db = Room.databaseBuilder(getApplicationContext(), DatabaseApp.class, "dataApp").build();
     }
-
+//.createFromAsset("db/data.db")
     public DatabaseApp getDb() {
         return db;
     }

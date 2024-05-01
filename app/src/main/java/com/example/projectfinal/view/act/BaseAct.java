@@ -4,8 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 
+import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -13,7 +18,7 @@ import androidx.viewbinding.ViewBinding;
 
 import com.example.projectfinal.view.OnMainCallBack;
 import com.example.projectfinal.view.frg.BaseFragment;
-import com.example.samplemvvm.R;
+import com.example.projectfinal.R;
 
 import java.lang.reflect.Constructor;
 
@@ -39,7 +44,7 @@ public abstract class BaseAct<T extends ViewBinding, M extends ViewModel>
 
 
     @Override
-    public final void onClick(View v) {
+    public final void onClick(@NonNull View v) {
         v.startAnimation(AnimationUtils.loadAnimation(this, androidx.appcompat.R.anim.abc_fade_in));
         clickView(v);
     }

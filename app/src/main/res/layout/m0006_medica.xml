@@ -34,7 +34,7 @@
         android:layout_margin="20dp">
 
         <TextView
-            android:id="@+id/tv_answer"
+            android:id="@+id/tv_request"
             android:layout_width="270dp"
             android:layout_height="match_parent"
             android:background="@mipmap/bg_chat_detail"
@@ -63,7 +63,7 @@
             android:src="@mipmap/ic_chat" />
 
         <TextView
-            android:id="@+id/tv_question"
+            android:id="@+id/tv_feedback"
             android:layout_width="270dp"
             android:layout_height="match_parent"
             android:background="@mipmap/bg_chat_detail"

@@ -9,8 +9,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.projectfinal.view.MapManager;
 import com.example.projectfinal.viewmodel.CommonVM;
-import com.example.samplemvvm.R;
-import com.example.samplemvvm.databinding.M004HospitalMapBinding;
+import com.example.projectfinal.R;
+import com.example.projectfinal.databinding.M004HospitalMapBinding;
 import com.google.android.gms.maps.SupportMapFragment;
 
 import java.lang.reflect.Constructor;

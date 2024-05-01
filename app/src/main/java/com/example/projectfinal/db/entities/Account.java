@@ -12,18 +12,14 @@ public class Account {
     @NonNull
     @ColumnInfo(name = "Name")
     public String name;
-    @ColumnInfo(name = "Account")
-    public String account;
+    @NonNull
+    @ColumnInfo(name = "Phone or email")
+    public String phoneemail;
     @NonNull
     @ColumnInfo(name = "Pass")
     public String pass;
-    @NonNull
-    @ColumnInfo(name = "Phone")
-    public String phone;
-    @NonNull
-    @ColumnInfo(name = "Email")
-    public String email;
-
+    @ColumnInfo(name = "ConfirmPass")
+    public String confirmPass;
     @NonNull
     @ColumnInfo(name = "DOB")
     public String birth;

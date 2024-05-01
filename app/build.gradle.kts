@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    namespace = "com.example.samplemvvm"
+    namespace = "com.example.projectfinal"
     compileSdk = 34
     buildFeatures {
         viewBinding = true
     }
 
     defaultConfig {
-        applicationId = "com.example.samplemvvm"
+        applicationId = "com.example.projectfinal"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

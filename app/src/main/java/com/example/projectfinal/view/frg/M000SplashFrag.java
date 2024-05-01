@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.projectfinal.viewmodel.CommonVM;
-import com.example.samplemvvm.databinding.M000SplashBinding;
+import com.example.projectfinal.databinding.M000SplashBinding;
 
 public class M000SplashFrag extends BaseFragment<M000SplashBinding, CommonVM> {
     public static final String TAG = M000SplashFrag.class.getName();
@@ -30,9 +30,7 @@ public class M000SplashFrag extends BaseFragment<M000SplashBinding, CommonVM> {
     }
 
     private void gotoLoginScreen() {
-
-
-        callBack.showFragment(M004MapHospitalFrag.TAG, null, false);
+        callBack.showFragment(M001LoginFrag.TAG, null, false);
         //NavHostFragment.findNavController(this).navigate(R.id.loginFragment);
 
     }

@@ -37,6 +37,7 @@
                 android:text=" :22"
                 android:textColor="@color/gray"
                 android:textSize="22sp" />
+
         </TableRow>
 
         <TableRow
