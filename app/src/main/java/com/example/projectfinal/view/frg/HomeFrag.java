@@ -14,15 +14,11 @@ import com.example.projectfinal.databinding.HomeFragmentBinding;
 
 public class HomeFrag extends BaseFragment<HomeFragmentBinding, CommonVM> {
     public static final String TAG = HomeFrag.class.getName();
+
     @Override
     protected void initView() {
         callBack.checkMapPermission();
-        binding.imAlarm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoRequestAct();
-            }
-        });
+        binding.imAlarm.setOnClickListener(v -> gotoRequestAct());
 
     }
 

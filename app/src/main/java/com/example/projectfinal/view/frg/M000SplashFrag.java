@@ -1,14 +1,13 @@
 package com.example.projectfinal.view.frg;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.projectfinal.viewmodel.CommonVM;
 import com.example.projectfinal.databinding.M000SplashBinding;
+import com.example.projectfinal.viewmodel.CommonVM;
 
 public class M000SplashFrag extends BaseFragment<M000SplashBinding, CommonVM> {
     public static final String TAG = M000SplashFrag.class.getName();
@@ -21,18 +20,12 @@ public class M000SplashFrag extends BaseFragment<M000SplashBinding, CommonVM> {
 //               gotoLoginScreen();
 //            }
 //        },2000);
-        binding.btStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoLoginScreen();
-            }
-        });
+        binding.btStart.setOnClickListener(v -> gotoLoginScreen());
     }
 
     private void gotoLoginScreen() {
-        callBack.showFragment(M001LoginFrag.TAG, null, false);
+        callBack.showFragment(HomeFrag.TAG, null, false);
         //NavHostFragment.findNavController(this).navigate(R.id.loginFragment);
-
     }
 
     @Override
