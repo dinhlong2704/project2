@@ -2,6 +2,7 @@ package com.example.projectfinal.view.act;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Handler;
 import android.provider.AlarmClock;
 import android.speech.RecognizerIntent;
 import android.util.Log;
@@ -78,7 +79,7 @@ public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
     private void sendToChatAdapter(String txt) {
         listMsg.add(new Message(txt, Message.TYPE_LEFT));
         adapter.notifyDataSetChanged();
-        //processRequest(txt);
+        processRequest(txt);
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -106,9 +107,16 @@ public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
 
     private void setupAlarm() {
         Log.i(TAG, "setupAlarm...");
-        Intent openClockIntent = new Intent(AlarmClock.ACTION_SET_ALARM);
-        openClockIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(openClockIntent);
+        listMsg.add(new Message("Wait a moment, alarm is processing...", Message.TYPE_RIGHT));
+        doDelayTask(() -> {
+            Intent openClockIntent = new Intent(AlarmClock.ACTION_SET_ALARM);
+            openClockIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(openClockIntent);
+        });
+    }
+
+    private void doDelayTask(Runnable runnable) {
+        new Handler().postDelayed(runnable, 1000);
     }
 
     @Override
