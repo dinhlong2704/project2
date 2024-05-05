@@ -42,6 +42,6 @@ public class HomeFrag extends BaseFragment<HomeFragmentBinding, CommonVM> {
 
     @Override
     protected HomeFragmentBinding initViewBinding(@NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
-        return HomeFragmentBinding.inflate(getLayoutInflater());
+        return HomeFragmentBinding.inflate(getLayoutInflater(), container, false);
     }
 }
