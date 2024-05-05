@@ -2,46 +2,44 @@ package com.example.projectfinal.view.frg;
 
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.projectfinal.App;
+import com.example.projectfinal.databinding.M001LoginBinding;
 import com.example.projectfinal.db.entities.Account;
 import com.example.projectfinal.viewmodel.CommonVM;
-import com.example.projectfinal.databinding.M001LoginBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class M001LoginFrag extends BaseFragment<M001LoginBinding, CommonVM> {
     public static final String TAG = M001LoginFrag.class.getName();
-    private List<Account> listpoe,listpass;
+    private List<Account> listPOE, listPass;
+
     @Override
     protected void initView() {
         binding.btSignUp.setOnClickListener(v -> gotoRegisterScreen());
         binding.btLogin.setOnClickListener(v -> gotoMainScreen());
-
     }
 
     private void gotoMainScreen() {
         new Thread(() -> {
-             listpoe =  App.getInstance().getDb().getAccountDAO().getPhoneEmail();
-            Log.i(TAG, listpoe.toString());
-              listpass =  App.getInstance().getDb().getAccountDAO().getPass();
+            listPOE = App.getInstance().getDb().getAccountDAO().getPhoneEmail();
+            Log.i(TAG, listPOE.toString());
+            listPass = App.getInstance().getDb().getAccountDAO().getPass();
             String poe = binding.txtphoneemail.getText().toString();
             String pass = binding.txtpass.getText().toString();
 
-            for ( Account e : listpoe  ) {
-                if (!poe.equals(e) ){
+            for (Account e : listPOE) {
+                if (!poe.equals(e.phoneemail)) {
                     continue;
                 }
-                for (Account p: listpass) {
-                    if (pass.equals(p)){
-                        callBack.showFragment(HomeFrag.TAG,null,false);
+
+                for (Account p : listPass) {
+                    if (pass.equals(p.pass)) {
+                        callBack.showFragment(HomeFrag.TAG, null, false);
                     }
                 }
             }
