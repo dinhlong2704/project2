@@ -16,7 +16,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:background="@mipmap/ic_them"
+            android:background="@mipmap/ic_add"
             android:backgroundTint="@color/white" />
 
         <Button

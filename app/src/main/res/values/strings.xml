@@ -22,4 +22,6 @@
     <string name="txt_disease">THÔNG TIN THUỐC</string>
     <string name="txt_feedback">1k = 1000m\n</string>
     <string name="txt_date_of_birth">Date Of Birth</string>
+    <string name="txt_info">Xem thông tin tài khoản</string>
+    <string name="txt_log_out">LOG OUT</string>
 </resources>

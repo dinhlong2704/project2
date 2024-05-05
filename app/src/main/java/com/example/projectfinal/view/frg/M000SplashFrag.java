@@ -14,12 +14,6 @@ public class M000SplashFrag extends BaseFragment<M000SplashBinding, CommonVM> {
 
     @Override
     protected void initView() {
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//               gotoLoginScreen();
-//            }
-//        },2000);
         binding.btStart.setOnClickListener(v -> gotoLoginScreen());
     }
 

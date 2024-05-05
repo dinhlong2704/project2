@@ -16,8 +16,8 @@
         android:padding="5dp"
         tools:ignore="UseCompoundDrawables,UselessParent">
 
-
         <TextView
+            android:id="@+id/tv_msg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

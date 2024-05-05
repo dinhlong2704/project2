@@ -12,6 +12,12 @@ public interface AccountDAO {
     @Query("Select * From Account")
     List<Account> getAccount();
 
+    @Query("Select * From Account Where `Phone or email` ")
+    List<Account> getPhoneEmail();
+
+    @Query("Select * From Account Where `Pass` ")
+    List<Account> getPass();
+
     @Insert
     void insertAccount(Account account);
 

@@ -40,32 +40,22 @@ public abstract class BaseFragment<B extends ViewBinding, V extends ViewModel>
         initView();
         return binding.getRoot();
     }
-
-
     public void setCallBack(OnMainCallBack callBack) {
         this.callBack = callBack;
     }
-
     @Override
     public final void onClick(View v) {
         v.startAnimation(AnimationUtils.loadAnimation(context, androidx.appcompat.R.anim.abc_fade_in));
         clickView(v);
     }
-
     protected abstract void initView();
-
     protected abstract Class<V> getClassViewModel();
-
     protected abstract B initViewBinding(@NonNull LayoutInflater inflater,
                                          @Nullable ViewGroup container);
-
     protected void clickView(View v) {
 
     }
-
     public void setData(Object data) {
         this.data = data;
     }
-
-
 }

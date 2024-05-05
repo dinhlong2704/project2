@@ -3,26 +3,24 @@ package com.example.projectfinal.db.entities;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-@Entity(primaryKeys = {"IdUser"})
+@Entity
 public class Account {
-    @NonNull
+
     @ColumnInfo(name = "IdUser")
-    public String idUser;
+    @PrimaryKey
     @NonNull
+    public String idUser;
     @ColumnInfo(name = "Name")
     public String name;
-    @NonNull
     @ColumnInfo(name = "Phone or email")
     public String phoneemail;
-    @NonNull
     @ColumnInfo(name = "Pass")
     public String pass;
     @ColumnInfo(name = "ConfirmPass")
     public String confirmPass;
-    @NonNull
     @ColumnInfo(name = "DOB")
     public String birth;
-
 
 }

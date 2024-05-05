@@ -17,7 +17,6 @@ import java.lang.reflect.Constructor;
 
 public class M004MapHospitalFrag extends BaseFragment<M004HospitalMapBinding, CommonVM> {
     public static final String TAG = M004MapHospitalFrag.class.getName();
-
     @Override
     protected void initView() {
         gotoMapHospital();
@@ -31,7 +30,6 @@ public class M004MapHospitalFrag extends BaseFragment<M004HospitalMapBinding, Co
             MapManager.getInstance().initMap(context, googleMap);
         });
     }
-
     @Override
     protected Class<CommonVM> getClassViewModel() {
         return CommonVM.class;
@@ -41,7 +39,6 @@ public class M004MapHospitalFrag extends BaseFragment<M004HospitalMapBinding, Co
     protected M004HospitalMapBinding initViewBinding(@NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
         return M004HospitalMapBinding.inflate(getLayoutInflater());
     }
-
     public void showFragment(String tag, Object data, boolean isBack) {
         try {
             Class<?> clazz = Class.forName(tag); //Trò vào 1 fragment class

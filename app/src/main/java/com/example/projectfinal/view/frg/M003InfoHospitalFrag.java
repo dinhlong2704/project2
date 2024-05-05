@@ -15,7 +15,7 @@ public class M003InfoHospitalFrag extends BaseFragment<M003HospitalInfoBinding, 
     @Override
     protected void initView() {
         try {
-            viewModel.listHospital(context.getAssets().open("hospital.txt"));
+            viewModel.listHospital(context.getAssets().open("db/hospital.txt"));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

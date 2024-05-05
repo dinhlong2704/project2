@@ -8,6 +8,7 @@ import com.example.projectfinal.db.DatabaseApp;
 
 public class App extends Application {
     private static App Instance;
+    //private Message message;
     private Storage storage;
     private DatabaseApp db;
 
@@ -19,14 +20,17 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         Instance = this;
+        //message= new Message(message.msg);
         storage = new Storage();
         initDB();
     }
 
     private void initDB() {
-      db = Room.databaseBuilder(getApplicationContext(), DatabaseApp.class, "dataApp").build();
+      db = Room.databaseBuilder(getApplicationContext(), DatabaseApp.class, "Account.db")
+              .createFromAsset("db/Account.db")
+              .build();
     }
-//.createFromAsset("db/data.db")
+
     public DatabaseApp getDb() {
         return db;
     }
@@ -34,4 +38,8 @@ public class App extends Application {
     public Storage getStorage() {
         return storage;
     }
+
+//    public Message getMessage() {
+//        return message;
+//    }
 }

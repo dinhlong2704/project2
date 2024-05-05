@@ -22,8 +22,6 @@ public class M002RegisterFrag extends BaseFragment<M002RegisterBinding, CommonVM
     protected void initView() {
         binding.btSignIn.setOnClickListener(v -> gotoLoginScreen());
         binding.btRegister.setOnClickListener(v -> addUser());
-
-
     }
 
     private void addUser() {
