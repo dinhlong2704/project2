@@ -9,38 +9,39 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.projectfinal.App;
 import com.example.projectfinal.Message;
 import com.example.projectfinal.R;
-import com.example.projectfinal.Storage;
 
 import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatHolder> {
-    private Context context;
+    private final Context context;
+    private final List<Message> listMsg;
 
-
-
-    private List<Message> listMsg;
-    public ChatAdapter(Context context) {
+    public ChatAdapter(Context context, List<Message> listMsg) {
         this.context = context;
-
-    }
-    public void setData(List<Message> listMsg) {
         this.listMsg = listMsg;
     }
 
     @NonNull
     @Override
     public ChatHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_msg_right, parent, false);
-        return new ChatHolder(view);
+        if (viewType == Message.TYPE_LEFT) {
+            return new ChatHolder(LayoutInflater.from(context).inflate(R.layout.item_msg_left, parent, false));
+        }
+        return new ChatHolder(LayoutInflater.from(context).inflate(R.layout.item_msg_right, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ChatHolder holder, int position) {
         Message msg = listMsg.get(position);
-        holder.tvMsg.setText(msg.getMsg());
+        holder.tvMsg.setText(msg.msg);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        Message msg = listMsg.get(position);
+        return msg.msgType;
     }
 
     @Override
@@ -48,8 +49,9 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatHolder> {
         return listMsg.size();
     }
 
-    public class ChatHolder extends RecyclerView.ViewHolder {
-         public TextView tvMsg;
+    public static class ChatHolder extends RecyclerView.ViewHolder {
+        public TextView tvMsg;
+
         public ChatHolder(@NonNull View itemView) {
             super(itemView);
             tvMsg = itemView.findViewById(R.id.tv_msg);

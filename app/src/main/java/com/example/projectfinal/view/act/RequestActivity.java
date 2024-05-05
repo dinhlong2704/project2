@@ -1,18 +1,16 @@
 package com.example.projectfinal.view.act;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.provider.AlarmClock;
 import android.speech.RecognizerIntent;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.projectfinal.App;
 import com.example.projectfinal.Message;
-import com.example.projectfinal.Storage;
 import com.example.projectfinal.databinding.M011ChatBinding;
 import com.example.projectfinal.view.adapter.ChatAdapter;
 import com.example.projectfinal.viewmodel.CommonVM;
@@ -23,11 +21,11 @@ import java.util.Locale;
 import java.util.Objects;
 
 public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
-    private ChatAdapter adapter;
-    private List<Message> listMsg;
     public static final String TAG = RequestActivity.class.getName();
     public static final String[] ALARM_KEYS = {"ĐẶT BÁO THỨC", "CÀI BÁO THỨC", "CÀI ĐẶT BÁO THỨC", "BÁO THỨC", "ĐÁNH THỨC", "SET UP ALARM", "ALARM"};
     private static final int REQUEST_CODE_SPEECH_INPUT = 1;
+    private final List<Message> listMsg = new ArrayList<>();
+    private ChatAdapter adapter;
 
     @Override
     public void backToPrevious() {
@@ -53,7 +51,8 @@ public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
                 e.printStackTrace();
             }
         });
-
+        initAdapter();
+        binding.btSend.setOnClickListener(v -> sendMess());
     }
 
     @Override
@@ -63,26 +62,30 @@ public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
             if (resultCode == RESULT_OK && data != null) {
                 ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                 String txt = Objects.requireNonNull(result).get(0);
-
                 sendToChatAdapter(txt);
-                //processRequest(txt);
             }
         }
     }
 
-    private void sendToChatAdapter(String txt) {
-        LinearLayoutManager linearLayoutManager =new LinearLayoutManager(this);
+    private void initAdapter() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         binding.rcvMsg.setLayoutManager(linearLayoutManager);
-        adapter = new ChatAdapter(this );
-        adapter.setData(listMsg);
+        adapter = new ChatAdapter(this, listMsg);
         binding.rcvMsg.setAdapter(adapter);
-        binding.btSend.setOnClickListener(v -> sendMess());
-
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    private void sendToChatAdapter(String txt) {
+        listMsg.add(new Message(txt, Message.TYPE_LEFT));
+        adapter.notifyDataSetChanged();
+        //processRequest(txt);
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
     private void sendMess() {
         String str = binding.edtMsg.getText().toString();
-        listMsg.add(new Message(str));
+        listMsg.add(new Message(str, Message.TYPE_LEFT));
+        adapter.notifyDataSetChanged();
     }
 
     private void processRequest(String txt) {
