@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
-import com.example.projectfinal.view.OnMainCallBack;
+import com.example.projectfinal.interfacecallback.OnMainCallBack;
 
 
 public abstract class BaseFragment<B extends ViewBinding, V extends ViewModel>

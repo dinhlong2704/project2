@@ -11,4 +11,10 @@
     <color name="colorGreen">#468840</color>
     <color name="colorGreenLight">#C3FCBE</color>
     <color name="colorGreenDark">#3E7539</color>
+    <color name="purple700">#9F41E2</color>
+    <color name="purple200">#74B385D3</color>
+    <color name="purple500">#BA7CE6</color>
+    <color name="gray_300">#2B2D30</color>
+    <color name="blue_300">#394975</color>
+    <color name="orange">#EB9D58</color>
 </resources>

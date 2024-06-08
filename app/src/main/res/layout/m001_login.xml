@@ -25,7 +25,7 @@
 
 
     <EditText
-        android:id="@+id/txtphoneemail"
+        android:id="@+id/edt_phoneemail"
         android:layout_width="312dp"
         android:layout_height="47dp"
         android:layout_margin="5dp"
@@ -40,7 +40,7 @@
         tools:ignore="RtlSymmetry,TextFields" />
 
     <EditText
-        android:id="@+id/txtpass"
+        android:id="@+id/edt_pass"
         android:layout_width="312dp"
         android:layout_height="47dp"
         android:layout_margin="5dp"

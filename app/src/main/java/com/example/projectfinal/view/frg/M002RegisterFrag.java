@@ -34,6 +34,7 @@ public class M002RegisterFrag extends BaseFragment<M002RegisterBinding, CommonVM
             account.pass = binding.txtpass.getText().toString();
             account.confirmPass = binding.txtconfirmpass.getText().toString();
             account.birth = binding.txtDob.getText().toString();
+
             App.getInstance().getDb().getAccountDAO().insertAccount(account);
         }).start();
 

@@ -14,21 +14,7 @@
         android:padding="20dp"
         tools:listitem="@layout/item_msg_right" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-    <EditText
-        android:id="@+id/edt_msg"
-        android:background="@color/blueLight"
-        android:layout_weight="1"
-        android:layout_height="match_parent"/>
 
-    <Button
-        android:id="@+id/bt_send"
-        android:layout_width="70dp"
-        android:layout_height="match_parent"
-        />
-    </TableRow>
 
     <ImageView
         android:id="@+id/iv_micro"

@@ -4,19 +4,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
-import com.example.projectfinal.view.OnMainCallBack;
+import com.example.projectfinal.interfacecallback.OnMainCallBack;
 import com.example.projectfinal.view.frg.BaseFragment;
 import com.example.projectfinal.R;
 

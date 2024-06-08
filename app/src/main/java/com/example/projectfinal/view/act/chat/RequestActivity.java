@@ -1,4 +1,4 @@
-package com.example.projectfinal.view.act;
+package com.example.projectfinal.view.act.chat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.projectfinal.Message;
 import com.example.projectfinal.databinding.M011ChatBinding;
+import com.example.projectfinal.view.act.BaseAct;
 import com.example.projectfinal.view.adapter.ChatAdapter;
 import com.example.projectfinal.viewmodel.CommonVM;
 
@@ -38,6 +39,7 @@ public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
 
     }
 
+
     @Override
     protected void initView() {
         ImageView mic = binding.ivMicro;
@@ -53,9 +55,8 @@ public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
             }
         });
         initAdapter();
-        binding.btSend.setOnClickListener(v -> sendMess());
-    }
 
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -67,14 +68,12 @@ public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
             }
         }
     }
-
     private void initAdapter() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         binding.rcvMsg.setLayoutManager(linearLayoutManager);
         adapter = new ChatAdapter(this, listMsg);
         binding.rcvMsg.setAdapter(adapter);
     }
-
     @SuppressLint("NotifyDataSetChanged")
     private void sendToChatAdapter(String txt) {
         listMsg.add(new Message(txt, Message.TYPE_LEFT));
@@ -82,12 +81,6 @@ public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
         processRequest(txt);
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    private void sendMess() {
-        String str = binding.edtMsg.getText().toString();
-        listMsg.add(new Message(str, Message.TYPE_LEFT));
-        adapter.notifyDataSetChanged();
-    }
 
     private void processRequest(String txt) {
         if (isAlarm(txt)) {

@@ -23,5 +23,6 @@ public interface AccountDAO {
 
     @Delete
     void deleteAccount(Account account);
+
 }
 

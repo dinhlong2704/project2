@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    alias(libs.plugins.jetbrainsKotlinAndroid)
 }
 
 android {
@@ -28,13 +29,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 
 dependencies {
     implementation(libs.room.runtime)
+    implementation(libs.core.ktx)
     annotationProcessor(libs.room.compiler)
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -46,4 +51,12 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.play.services.maps)
+    implementation (libs.openai.client)
+    implementation (libs.ktor.client.android)
+    implementation(libs.glide)
+    implementation(libs.android)
+   
+
+
+
 }

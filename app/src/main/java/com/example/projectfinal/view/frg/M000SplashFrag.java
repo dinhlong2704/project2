@@ -26,7 +26,6 @@ public class M000SplashFrag extends BaseFragment<M000SplashBinding, CommonVM> {
     protected Class<CommonVM> getClassViewModel() {
         return CommonVM.class;
     }
-
     @Override
     protected M000SplashBinding initViewBinding(@NonNull LayoutInflater inflater,
                                                 @Nullable ViewGroup container) {
