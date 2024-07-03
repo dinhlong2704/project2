@@ -51,12 +51,10 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.play.services.maps)
-    implementation (libs.openai.client)
-    implementation (libs.ktor.client.android)
+    implementation(libs.openai.client)
+    implementation(libs.ktor.client.android)
     implementation(libs.glide)
     implementation(libs.android)
-   
-
-
-
+    implementation(libs.navigation.android)
+    implementation (libs.mapbox.search.android.ui)
 }

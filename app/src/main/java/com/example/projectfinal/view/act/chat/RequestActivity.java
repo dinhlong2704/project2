@@ -25,6 +25,7 @@ import java.util.Objects;
 public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
     public static final String TAG = RequestActivity.class.getName();
     public static final String[] ALARM_KEYS = {"ĐẶT BÁO THỨC", "CÀI BÁO THỨC", "CÀI ĐẶT BÁO THỨC", "BÁO THỨC", "ĐÁNH THỨC", "SET UP ALARM", "ALARM"};
+    public static final String[] CALL_KEYS = {"CALL", "GỌI ĐIỆN","GỌI ĐIỆN THOẠI"};
     private static final int REQUEST_CODE_SPEECH_INPUT = 1;
     private final List<Message> listMsg = new ArrayList<>();
     private ChatAdapter adapter;
@@ -85,7 +86,28 @@ public class RequestActivity extends BaseAct<M011ChatBinding, CommonVM> {
     private void processRequest(String txt) {
         if (isAlarm(txt)) {
             setupAlarm();
+        } else if (isCall(txt)) {
+            callPhone();
         }
+    }
+
+    private void callPhone() {
+        listMsg.add(new Message("Wait a moment, call is processing...", Message.TYPE_RIGHT));
+        doDelayTask(() -> {
+            Intent openPhoneIntent = new Intent(Intent.ACTION_DIAL);
+            openPhoneIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(openPhoneIntent);
+        });
+    }
+
+    private boolean isCall(String txt) {
+        String data = txt.toUpperCase(Locale.ROOT);
+        for (String key : CALL_KEYS) {
+            if (data.contains(key.toUpperCase())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean isAlarm(String txt) {

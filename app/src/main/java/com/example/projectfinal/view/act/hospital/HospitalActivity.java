@@ -1,4 +1,4 @@
-package com.example.projectfinal.view.act.map;
+package com.example.projectfinal.view.act.hospital;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -9,13 +9,11 @@ import androidx.annotation.NonNull;
 import com.example.projectfinal.R;
 import com.example.projectfinal.databinding.ActivityMapBinding;
 import com.example.projectfinal.view.act.BaseAct;
-import com.example.projectfinal.view.frg.M003NoteHospitalFrag;
 import com.example.projectfinal.view.frg.M006ChonTinhFrag;
 import com.example.projectfinal.viewmodel.CommonVM;
 
-public class MapActivity extends BaseAct<ActivityMapBinding, CommonVM> {
-    private static final String TAG = MapActivity.class.getName();
-// AIzaSyCoerDftyF5T5tLqw9fzvOLLFb2IaMuWQE  Map API key
+public class HospitalActivity extends BaseAct<ActivityMapBinding, CommonVM> {
+    private static final String TAG = HospitalActivity.class.getName();
 
     @Override
     protected void initView() {
@@ -24,11 +22,8 @@ public class MapActivity extends BaseAct<ActivityMapBinding, CommonVM> {
 
     public void showFragmentMap() {
         M006ChonTinhFrag fragment = new M006ChonTinhFrag();
-       fragment.setCallBack(this);
-     getSupportFragmentManager().beginTransaction().replace(R.id.ln_main_map, fragment, M006ChonTinhFrag.TAG).commit();
-//        M003NoteHospitalFrag fragment = new M003NoteHospitalFrag();
-//        fragment.setCallBack(this);
-//        getSupportFragmentManager().beginTransaction().replace(R.id.ln_main_map, fragment, M003NoteHospitalFrag.TAG).commit();
+        fragment.setCallBack(this);
+        getSupportFragmentManager().beginTransaction().replace(R.id.ln_main_map, fragment, M006ChonTinhFrag.TAG).commit();
     }
 
     @Override
@@ -52,11 +47,6 @@ public class MapActivity extends BaseAct<ActivityMapBinding, CommonVM> {
             Toast.makeText(this, "Please accept this permission to show Map", Toast.LENGTH_SHORT).show();
         }
     }
-
-
-
-
-
 
     @Override
     protected ActivityMapBinding initViewBinding() {

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/orange"
     android:orientation="vertical"
-    tools:context="com.example.projectfinal.view.act.map.MapActivity">
+    tools:context="com.example.projectfinal.view.act.hospital.HospitalActivity">
 <FrameLayout
     android:layout_width="match_parent"
     android:id="@+id/ln_main_map"

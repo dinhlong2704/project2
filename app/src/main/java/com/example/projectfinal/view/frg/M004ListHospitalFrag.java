@@ -1,7 +1,6 @@
 package com.example.projectfinal.view.frg;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -15,19 +14,15 @@ import com.example.projectfinal.viewmodel.CommonVM;
 import java.util.ArrayList;
 import java.util.List;
 
-public class M004ListHospitalFrag extends BaseFragment<M004ListHostpitalBinding, CommonVM>{
+public class M004ListHospitalFrag extends BaseFragment<M004ListHostpitalBinding, CommonVM> {
 
 
     public static final String TAG = M004ListHospitalFrag.class.getName();
 
     @Override
     protected void initView() {
-      List<Hospital> listData = (List<Hospital>) data;
-        HostpitalAdapter adapter = new HostpitalAdapter((ArrayList<Hospital>) listData, context, new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
+        List<Hospital> listData = (List<Hospital>) data;
+        HostpitalAdapter adapter = new HostpitalAdapter((ArrayList<Hospital>) listData, context, v -> {
         });
         binding.vpPlace.setAdapter(adapter);
     }
@@ -39,6 +34,6 @@ public class M004ListHospitalFrag extends BaseFragment<M004ListHostpitalBinding,
 
     @Override
     protected M004ListHostpitalBinding initViewBinding(@NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
-        return M004ListHostpitalBinding.inflate(inflater,container,false);
+        return M004ListHostpitalBinding.inflate(inflater, container, false);
     }
 }

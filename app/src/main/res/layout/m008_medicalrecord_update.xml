@@ -17,8 +17,11 @@
         android:textStyle="bold" />
 
     <ImageView
+        android:layout_gravity="center"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
         android:id="@+id/iv_anhbenhan"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="400dp"
         android:layout_marginHorizontal="20dp"
         android:src="@mipmap/im_maubenhan" />

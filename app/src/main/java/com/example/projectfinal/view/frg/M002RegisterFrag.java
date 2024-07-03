@@ -1,7 +1,6 @@
 package com.example.projectfinal.view.frg;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -33,15 +32,24 @@ public class M002RegisterFrag extends BaseFragment<M002RegisterBinding, CommonVM
             account.phoneemail = binding.txtemail.getText().toString();
             account.pass = binding.txtpass.getText().toString();
             account.confirmPass = binding.txtconfirmpass.getText().toString();
-            account.birth = binding.txtDob.getText().toString();
 
-            App.getInstance().getDb().getAccountDAO().insertAccount(account);
+            account.birth = binding.txtDob.getText().toString();
+            if (!(binding.txtpass.getText().toString().equals(binding.txtconfirmpass.getText().toString()))) {
+                getActivity().runOnUiThread(() ->
+                        Toast.makeText(getActivity(), "Xác nhận mật khẩu không đúng", Toast.LENGTH_SHORT).show()
+                );
+                return;
+            }
+           App.getInstance().getDb().getAccountDAO().insertAccount(account);
+            getActivity().runOnUiThread(() ->
+                    Toast.makeText(getActivity(), "Đã đăng ki tài khoản thành công", Toast.LENGTH_SHORT).show()
+            );
         }).start();
 
     }
 
     private void gotoLoginScreen() {
-        callBack.showFragment(M001LoginFrag.TAG, null, true);
+                    callBack.showFragment(M001LoginFrag.TAG, null, true);
     }
 
     @Override

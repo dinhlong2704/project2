@@ -12,7 +12,7 @@ import com.example.projectfinal.databinding.HomeFragmentBinding;
 import com.example.projectfinal.dialog.CloseDialog;
 import com.example.projectfinal.view.act.medicalrecord.MedicalRecordActivity;
 import com.example.projectfinal.view.act.chat.RequestActivity;
-import com.example.projectfinal.view.act.map.MapActivity;
+import com.example.projectfinal.view.act.hospital.HospitalActivity;
 import com.example.projectfinal.view.act.media.MusicActivity;
 import com.example.projectfinal.viewmodel.CommonVM;
 
@@ -36,7 +36,7 @@ public class HomeFrag extends BaseFragment<HomeFragmentBinding, CommonVM> {
     }
 
     private void gotoHospital() {
-        Intent intent = new Intent(getActivity(), MapActivity.class);
+        Intent intent = new Intent(getActivity(), HospitalActivity.class);
         intent.putExtra("key", "value");
         // Bắt đầu Activity mới
         startActivity(intent);

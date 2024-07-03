@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="@mipmap/bg_chat"
     android:orientation="vertical">
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvMsg"
         android:layout_width="match_parent"
@@ -13,9 +12,6 @@
         android:layout_weight="1"
         android:padding="20dp"
         tools:listitem="@layout/item_msg_right" />
-
-
-
     <ImageView
         android:id="@+id/iv_micro"
         android:layout_width="50dp"
@@ -24,6 +20,5 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:src="@mipmap/ic_micro"
-        tools:ignore="ContentDescription" />
-
+        tools:ignore="ContentDescription"/>
 </LinearLayout>

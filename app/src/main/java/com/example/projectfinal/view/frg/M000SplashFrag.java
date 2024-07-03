@@ -18,8 +18,7 @@ public class M000SplashFrag extends BaseFragment<M000SplashBinding, CommonVM> {
     }
 
     private void gotoLoginScreen() {
-        callBack.showFragment(HomeFrag.TAG, null, false);
-        //NavHostFragment.findNavController(this).navigate(R.id.loginFragment);
+        callBack.showFragment(M001LoginFrag.TAG, null, false);
     }
 
     @Override

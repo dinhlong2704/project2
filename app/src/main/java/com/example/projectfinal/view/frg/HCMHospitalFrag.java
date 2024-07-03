@@ -1,5 +1,6 @@
 package com.example.projectfinal.view.frg;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,15 +12,14 @@ import androidx.core.widget.ImageViewCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.projectfinal.R;
-import com.example.projectfinal.databinding.M003NotehospitalFragBinding;
-import com.example.projectfinal.view.MapManager;
+import com.example.projectfinal.databinding.HcmNotehospitalFragBinding;
+import com.example.projectfinal.view.act.hospital.MapBoxActivity;
 import com.example.projectfinal.viewmodel.M003HospitalVM;
-import com.google.android.gms.maps.SupportMapFragment;
 
 import java.lang.reflect.Constructor;
 
-public class M003NoteHospitalFrag extends BaseFragment<M003NotehospitalFragBinding, M003HospitalVM> {
-    public static final String TAG = M003NoteHospitalFrag.class.getName();
+public class HCMHospitalFrag extends BaseFragment<HcmNotehospitalFragBinding, M003HospitalVM> {
+    public static final String TAG = HCMHospitalFrag.class.getName();
     private static final int TYPE_LIST = 1;
     private static final int TYPE_MAP = 2;
 
@@ -29,7 +29,7 @@ public class M003NoteHospitalFrag extends BaseFragment<M003NotehospitalFragBindi
         binding.ivList.setOnClickListener(this);
         binding.ivMap.setOnClickListener(this);
         try {
-            viewModel.loadData(context.getAssets().open("hospital.txt"));
+            viewModel.loadData(context.getAssets().open("hospitalHCM.txt"));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -61,9 +61,9 @@ public class M003NoteHospitalFrag extends BaseFragment<M003NotehospitalFragBindi
 
 
     private void gotoMapHospital() {
-        M005MapHospitalFrag fragment = new M005MapHospitalFrag();
-        FragmentTransaction trans = getChildFragmentManager().beginTransaction();
-        trans.replace(R.id.ln_frag_map, fragment, M005MapHospitalFrag.TAG).commit();
+        Intent intent = new Intent(getActivity(), MapBoxActivity.class);
+        intent.putExtra("key", "value");
+        startActivity(intent);
     }
 
     @Override
@@ -72,13 +72,13 @@ public class M003NoteHospitalFrag extends BaseFragment<M003NotehospitalFragBindi
     }
 
     @Override
-    protected M003NotehospitalFragBinding initViewBinding(@NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
-        return M003NotehospitalFragBinding.inflate(getLayoutInflater());
+    protected HcmNotehospitalFragBinding initViewBinding(@NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
+        return HcmNotehospitalFragBinding.inflate(getLayoutInflater());
     }
 
     public void showFragment(String tag, Object data) {
         try {
-            Class<?> clazz = Class.forName(tag); //Trò vào 1 fragment class
+            Class<?> clazz = Class.forName(tag);
             Constructor<?> cons = clazz.getConstructor();
             BaseFragment<?, ?> frg = (BaseFragment<?, ?>) cons.newInstance(); // Tạo ra 1 thực thể từ tên
             frg.setData(data);
